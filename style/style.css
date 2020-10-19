@@ -1,0 +1,2023 @@
+﻿body {
+    background-image: url(header.gif);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+}
+
+header {
+    background-image: url(bgGif2.gif);
+    background-repeat: repeat;
+    background-size: 50%;
+    border-radius: 4px;
+    margin: 5px;
+    margin-left: 0px;
+    padding: 3px;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+    height: 240px;
+    width: 100%;
+    border: double;
+    border-width: 10px;
+    border-color: azure;
+    border-radius: 4px;
+    border-top-right-radius: 35%;
+    border-top-left-radius: 35%;
+    border-bottom: solid;
+    background-color: indigo;
+}
+
+.welcomeArt {
+    width: 100%;
+    height: 200px;
+}
+/*--Навигационна лента--*/
+nav {
+    margin-bottom: 5px;
+    border-left: double;
+    border-right: double;
+    border-width: 10px;
+    border-color: azure;
+    border-radius: 4px;
+    background-color: indigo;
+    width: 100%;
+    margin-top: 10px;
+    padding: 3px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: indigo;
+}
+
+li.firstLink {
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    color: azure;
+    background-color: indigo;
+    border-right: 1px solid azure;
+}
+
+    li.firstLink:hover {
+        color: azure;
+        background-color: mediumpurple;
+        border-color: azure;
+        font-size: 15px;
+    }
+
+li.lastLink {
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    color: azure;
+    background-color: indigo;
+    border-right: none;
+}
+
+    li.lastLink:hover {
+        color: azure;
+        background-color: mediumpurple;
+        border-color: azure;
+        font-size: 15px;
+    }
+
+li.middleLink {
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    color: azure;
+    background-color: indigo;
+}
+
+    li.middleLink:hover {
+        color: azure;
+        background-color: mediumpurple;
+        border-color: azure;
+        font-size: 15px;
+    }
+
+#selected {
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    color: azure;
+    background-color: indigo;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+li {
+    float: left;
+    border-right: 1px solid azure;
+    width: 20%;
+}
+
+    li a {
+        -o-transition: .5s;
+        -moz-transition: .5s;
+        -webkit-transition: .5s;
+        transition: .5s;
+        display: block;
+        color: azure;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        li a:hover:not(.active) {
+            background-color: mediumpurple;
+            border-radius: 4px;
+        }
+
+.galaxyContent {
+    position: fixed;
+    bottom: 0;
+    background: indigo;
+    color: azure;
+    width: 100%;
+    padding: 20px;
+}
+
+#welcome {
+    display: flex;
+    align-items: center;
+}
+
+.indexParallaxOne {
+    text-align: center;
+    background-image: url('indexParallaxOne.jpg');
+    width: 100%;
+    height: 600px;
+    margin-left: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallaxOne {
+    text-align: center;
+    background-image: url('parallaxOne.jpg');
+    width: 100%;
+    height: 900px;
+    margin-left: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallaxTwo {
+    background-image: url('parallaxTwo.jpg');
+    width: 100%;
+    height: 1500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallaxThree {
+    background-image: url('parallaxThree.jpg');
+    width: 100%;
+    height: 1650px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallaxFour {
+    background-image: url('parallaxFour.png');
+    width: 100%;
+    height: 1200px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a.backToHomePage {
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    word-spacing: 20px;
+    letter-spacing: 10px;
+    color: azure;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: indigo;
+    border-top: solid;
+    border-bottom: solid;
+    border-left: none;
+    border-right: none;
+    width: 400px;
+    height: 50px;
+    border-width: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-color: azure;
+    font-size: 20px;
+}
+
+#galaxyTitle {
+    padding-top: 260px;
+    margin-top: 0px;
+    font-size: 60px;
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    color: azure;
+}
+
+#galaxyFormation {
+    border-radius: 4px;
+    text-align: center;
+    float: left;
+    padding: 3px;
+    height: 900px;
+    width: 100%;
+    background-color: #0d0d0d;
+    box-shadow: 0 0px 1000px 300px #0d0d0d;
+}
+
+#starsFormation {
+    border-left: none;
+    border-right: none;
+    border-width: 10px;
+    border-color: #0d0d0d;
+    border-radius: 4px;
+    text-align: center;
+    float: left;
+    padding: 3px;
+    height: 400px;
+    width: 100%;
+    background-color: indigo;
+    box-shadow: 0 0px 500px 300px indigo;
+}
+
+/* Видове галактики */
+#typesOfGalaxies {
+    border-radius: 4px;
+    text-align: center;
+    float: left;
+    padding: 3px;
+    height: 500px;
+    width: 100%;
+    background-color: indigo;
+}
+
+p.galaxyGroup {
+    letter-spacing: 5px;
+    color: azure;
+    text-align: center;
+    border-top: none;
+}
+
+
+div.galaxyType:hover {
+    background: rgba(0, 0, 0, 0.45);
+    transition: 1.5s;
+}
+
+#galaxyTypesInfo {
+    width: 100%;
+    height: 700px;
+}
+
+/* Видове галактики - /край/ */
+article.galaxyEnd {
+    border-radius: 4px;
+    text-align: center;
+    float: left;
+    padding: 3px;
+    height: 100px;
+    width: 100%;
+    background-color: indigo;
+}
+
+.backToHomePage:hover {
+    background-color: rebeccapurple;
+}
+/* Край на оформлението на страница галактики */
+
+section {
+    border-left: double;
+    border-right: double;
+    border-width: 10px;
+    border-color: azure;
+    border-radius: 4px;
+    text-align: center;
+    float: left;
+    padding: 3px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 90%;
+    background-color: indigo;
+}
+
+#solarSystemSection {
+    background: linear-gradient(to right,indigo, #0d0d0d);
+}
+
+#galaxySection {
+    border: none;
+    text-align: center;
+    float: left;
+    padding: 3px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 90%;
+    background-color: #0d0d0d;
+}
+
+#constellationArticle {
+    border-radius: 4px;
+    text-align: center;
+    float: left;
+    padding: 3px;
+    height: auto;
+    width: 100%;
+    background-color: transparent;
+}
+
+#constellationList {
+    width: 100%;
+    height: auto;
+}
+
+#constSection {
+    background: linear-gradient(to bottom,indigo, #0d0d0d);
+}
+
+
+
+
+img.constellationCardImage:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+
+
+
+#canvasCnc {
+    background-image: url(cnc.jpg);
+}
+
+article img {
+    opacity: 1;
+}
+
+div.planetShow {
+    width: 100%;
+    height: 600px;
+    background: transparent;
+    overflow: auto;
+}
+
+img.planetImage {
+    float: right;
+}
+
+img.moonImage {
+    float: right;
+}
+
+
+.planets:hover {
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.moonImage:hover {
+}
+
+
+img.mainSun {
+    float: left;
+}
+
+div.planetInfo {
+}
+
+
+
+
+/* Стилизиране на страницата начало и обектите в нея */
+.welcomeGallery {
+    border: solid;
+    border-top: none;
+    border-bottom: none;
+    border-width: 10px;
+    border-color: azure;
+    border-radius: 4px;
+    display: inline-block;
+    width: 80%;
+    height: 1000px;
+    box-shadow: 0 0px 200px 80px indigo inset;
+    background-color: #0d0d0d;
+    border-top-right-radius: 10%;
+    border-top-left-radius: 10%;
+}
+
+    .welcomeGallery:hover {
+    }
+
+#space {
+    padding: 30px;
+    display: inline-block;
+}
+
+.spaceGallery {
+}
+
+.block {
+    float: left;
+    width: 200px;
+    margin-right: 100px;
+}
+
+/* Изскачащ прозорец*/
+#popUpInfoOne, #popUpInfoTwo, #popUpInfoThree, #popUpInfoFour, #popUpInfoFive, #popUpInfoSix {
+    width: 200px;
+    height: 210px;
+    background-color: #0d0d0d;
+    position: absolute;
+}
+
+p.name {
+    font-size: 30px;
+    border-width: 1px;
+    border: solid;
+    border: none;
+    border-bottom: solid;
+    border-color: azure;
+    padding: 4px;
+    box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.elOne {
+    position: relative;
+    width: 200px;
+    height: 210px;
+    border-width: 2px;
+    border-top: solid;
+    border-color: azure;
+    box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.5);
+    content: "";
+    display: inline-block;
+}
+
+    .elOne:hover .overlay {
+        width: 100%;
+        left: 0;
+    }
+
+.elTwo {
+    position: relative;
+    width: 200px;
+    height: 210px;
+    border-width: 2px;
+    border-top: solid;
+    border-color: azure;
+    box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.5);
+    content: "";
+    display: inline-block;
+}
+
+    .elTwo:hover .overlay {
+        width: 100%;
+        left: 0;
+    }
+
+.elThree {
+    position: relative;
+    width: 200px;
+    height: 210px;
+    border-width: 2px;
+    border-top: solid;
+    border-color: azure;
+    box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.5);
+    content: "";
+    display: inline-block;
+}
+
+    .elThree:hover .overlay {
+        width: 100%;
+        left: 0;
+    }
+
+.elFour {
+    position: relative;
+    width: 200px;
+    height: 210px;
+    border-width: 2px;
+    border-top: solid;
+    border-color: azure;
+    box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.5);
+    content: "";
+    display: inline-block;
+}
+
+    .elFour:hover .overlay {
+        width: 100%;
+        left: 0;
+    }
+
+.elFive {
+    position: relative;
+    width: 200px;
+    height: 210px;
+    border-width: 2px;
+    border-top: solid;
+    border-color: azure;
+    box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.5);
+    content: "";
+    display: inline-block;
+}
+
+    .elFive:hover .overlay {
+        width: 100%;
+        left: 0;
+    }
+
+.elSix {
+    position: relative;
+    width: 200px;
+    height: 210px;
+    border-width: 2px;
+    border-top: solid;
+    border-color: azure;
+    box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.5);
+    content: "";
+    display: inline-block;
+}
+
+    .elSix:hover .overlay {
+        width: 100%;
+        left: 0;
+    }
+/*--------------------------*/
+
+.image {
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+
+/*------------*/
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background: linear-gradient(to right,indigo, #0d0d0d);
+    border-radius: 4px;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .75s ease;
+    opacity: 0.6;
+}
+
+.text {
+    white-space: nowrap;
+    color: azure;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+button.popUpButton {
+    color: azure;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background: linear-gradient(to right,indigo, #0d0d0d);
+    border-top: solid;
+    border-bottom: solid;
+    border-left: none;
+    border-right: none;
+    width: 200px;
+    height: 50px;
+    border-width: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-color: azure;
+}
+
+/* Край на стилизирането на началната страница*/
+
+/* Планетите*/
+button.backButton {
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    letter-spacing: 10px;
+    color: azure;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: indigo;
+    border-top: solid;
+    border-bottom: solid;
+    border-left: none;
+    border-right: none;
+    width: 200px;
+    height: 50px;
+    border-width: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-color: azure;
+    position: absolute;
+    top: 800px;
+    left: 45%;
+}
+
+.backButton:hover {
+    background-color: rebeccapurple;
+}
+
+
+/* Планетите - /край/ */
+
+/*--------Стилизиране на слайдшоу---------------*/
+.mySlides {
+    display: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#imagesForGallery {
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+/* Позиция на контейнера за изображения (необходими за позиционирането на лява и дясна стрелка) */
+.container {
+    position: relative;
+    margin: 50px;
+    box-shadow: 0 0px 1000px 0 lightblue;
+}
+
+/* Скрий изображенията отначало */
+.mySlides {
+    display: none;
+}
+
+/* 'pointer' когато курсора на мишката е над изображението */
+.cursor {
+    cursor: pointer;
+}
+
+/* лява и дясна стрелка */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Позициониране на бутоните вдясно и вляво */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+}
+    /*--------------------*/
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+/* Номериран текст */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/*Стилизация на текста на изображенията*/
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+    width: 16.66%;
+}
+
+.demo {
+    opacity: 0.6;
+}
+
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+/*--------Стилизиране на слайдшоуто - /край/ ---------------*/
+
+/*----Нтилизиране на скролера/------*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: indigo;
+    border-radius: 10px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.5);
+    }
+/*----Стилизиране на скролера - /край/ -------*/
+li > button {
+    display: block;
+    color: azure;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: indigo;
+    border: none;
+    width: 200px;
+    height: 50px;
+    border: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    li > button:hover {
+        background-color: azure;
+        color: indigo;
+    }
+
+h1 {
+    text-align: center;
+    color: azure;
+    font-size: 40px;
+}
+
+    h1.mainTittle {
+        font-size: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 20px;
+        background: -webkit-gradient(linear, left bottom, right top, color-stop(20%, azure), color-stop(40%, indigo), color-stop(60%, indigo), color-stop(80%, azure));
+        background: linear-gradient(to right, azure 20%, indigo 40%, indigo 60%, azure 80%);
+        background-size: 200% auto;
+        color: #000;
+        background-clip: text;
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-animation: shine 3s linear infinite;
+        animation: shine 3s linear infinite;
+    }
+
+@-webkit-keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+
+h2 {
+    text-align: center;
+    color: azure;
+    font-size: 30px;
+}
+
+    h2.articleTitle {
+        text-transform: uppercase;
+        letter-spacing: 20px;
+        padding: 20px;
+        margin: 10px;
+    }
+
+#videoTitle {
+    margin-bottom: 30px;
+}
+
+p {
+    color: azure;
+}
+
+hr {
+    border: solid;
+    border-radius: 50%;
+    border-color: azure;
+    border-width: 2px;
+    width: 700px;
+    text-align: center;
+}
+
+footer {
+    border: double;
+    border-width: 10px;
+    border-color: azure;
+    border-radius: 4px;
+    border-top: none;
+    clear: both;
+    width: 100%;
+    height: 10%;
+    margin-top: 20px;
+    margin-left: 0px;
+    padding: 3px;
+    background: linear-gradient(to top,indigo, #0d0d0d);
+}
+
+
+
+#imgeGalleryEntertainment {
+    border: 50px solid transparent;
+    border-image: url(border.gif) 100 round;
+}
+
+/*-----------Стилизиране в раздел игра---------------*/
+.buttonLevels {
+    width: 200px;
+    height: 50px;
+    background-color: azure;
+    border: solid;
+    border-color: azure;
+    color: indigo;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 30%;
+    margin: 15px;
+    padding: 5px;
+}
+
+#gameLevels {
+    right: 0;
+    text-align: center;
+}
+/*-----------Стилизиране в раздел игра - /край/ ----------------*/
+
+/*-------------Страницата звезди---------------------*/
+.starLife {
+    float: none;
+    display: inline-block;
+    margin: 50px;
+}
+
+.imgStarLife {
+    border-radius: 10%;
+}
+
+.divTypeOneArrow {
+    width: 10%;
+    float: none;
+    display: inline-block;
+    left: 0;
+}
+
+.divTypeOne {
+    width: 10%;
+    float: none;
+    display: inline-block;
+    left: 0;
+}
+
+
+#arrowUp {
+    -ms-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+/*----------Изскачащ прозорец-------------*/
+
+
+.divTypeOne .popupText {
+    visibility: hidden;
+    width: 160px;
+    background-color: azure;
+    color: indigo;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+    border: 5px;
+    border-color: azure;
+}
+
+    .divTypeOne .popupText::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: azure transparent transparent transparent;
+    }
+
+.divTypeOne .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*---------------------------------------------------------*/
+
+.divTypeTwo {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    .divTypeTwo .popupText {
+        visibility: hidden;
+        width: 160px;
+        background-color: azure;
+        color: indigo;
+        text-align: center;
+        border-radius: 6px;
+        padding: 8px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -80px;
+        border: 5px;
+        border-color: azure;
+    }
+
+        .divTypeTwo .popupText::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: azure transparent transparent transparent;
+        }
+
+    .divTypeTwo .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+    }
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+/*-----------------------------------*/
+/*-------------Страница звезди - /край/ -----------------*/
+
+/*---------Галерия-------------*/
+.smallImagesForGallery {
+    width: 100px;
+    height: 85px;
+}
+
+.imagesForGalleryClass {
+    width: 1000px;
+    height: 620px;
+}
+
+.cursor {
+    width: 100px;
+    height: 100px;
+}
+
+#imageGalleryEntertainment {
+    border: ridge;
+    border-top: double;
+    border-bottom: double;
+    border-width: 10px;
+    border-color: azure;
+    border-radius: 4px;
+}
+
+#imagesForGallery1 {
+    vertical-align: middle;
+    border-radius: 4px;
+}
+/*---------Галерия - /край/ -------------*/
+canvas {
+    border: 5px solid white;
+}
+/*-----------------------------------------------------*/
+
+/*Звездна еволюция*/
+#divForPaths {
+    width: 100%;
+    height: 700px;
+}
+
+
+.Paths:hover {
+    background: rgba(0, 0, 0, 0.45);
+    transition: 1.5s;
+}
+
+#imgPathOne {
+    width: 150px;
+    height: 150px;
+}
+
+#imgPathTwo {
+    width: 150px;
+    height: 150px;
+}
+
+#imagesForStarLife {
+    width: 350px;
+    height: 250px;
+    border-radius: 20%;
+    box-shadow: 0px 0px 70px azure;
+}
+
+
+#backButtonGalaxies, #backButtonGalaxiesPathTwo, .buttonForTheEvolution {
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    letter-spacing: 10px;
+    color: azure;
+    text-align: center;
+    text-decoration: none;
+    background-color: indigo;
+    border-top: solid;
+    border-bottom: solid;
+    border-left: none;
+    border-right: none;
+    width: 200px;
+    height: 50px;
+    border-width: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-color: azure;
+    top: 800px;
+    left: 45%;
+}
+/*----------Галерия-------------*/
+.row {
+    overflow-y: scroll;
+    height: 100px;
+}
+
+.column {
+    display: inline-block;
+    padding: 5px;
+}
+/*------------------------------*/
+
+#myCanvas {
+    background-image: url(constellationCancer.jpg);
+}
+
+/*----------За раздел развлечения-------------*/
+
+#sectionEntertainment {
+    background: linear-gradient(to bottom,indigo, #0d0d0d);
+}
+
+
+
+
+/*------------------------------------------*/
+
+/*---------бутон назад в раздел развлечения-------*/
+.backButtonEntertainment {
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    letter-spacing: 10px;
+    color: azure;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: indigo;
+    border-top: solid;
+    border-bottom: solid;
+    border-left: none;
+    border-right: none;
+    width: 200px;
+    height: 50px;
+    border-width: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-color: azure;
+    top: 800px;
+    left: 45%;
+    text-align: center;
+}
+
+    .backButtonEntertainment:hover {
+        background-color: rebeccapurple;
+    }
+
+/*-----за-бутоните-които-ни-препращат-------------*/
+
+/*-----за-бутоните-които-ни-препращат--/край/-----*/
+
+#imageGalleryEntertainment {
+    margin-top: 10%;
+}
+
+.imagesStarLife, .imagesStarLifePathTwo {
+    margin-top: 5%;
+}
+
+.backButtonDiv {
+    text-align: center;
+}
+/*-------Съзвездия - canvas -------------*/
+#canvasCap {
+    background-image: url(Cap.jpg);
+}
+
+#canvasCas {
+    background-image: url(Cas.jpg);
+}
+
+#canvasCyg {
+    background-image: url(Cyg.jpg);
+}
+
+#canvasLeo {
+    background-image: url(Leo2.jpg);
+}
+
+#canvasPer {
+    background-image: url(Per2.jpg);
+}
+
+#canvasSco {
+    background-image: url(Sco.jpg);
+}
+
+#canvasCMa {
+    background-image: url(CMa.jpg);
+}
+
+#canvasGem {
+    background-image: url(Gem.jpg);
+}
+
+#canvasAur {
+    background-image: url(Aur.jpg);
+}
+
+#canvasLib {
+    background-image: url(Lib.jpg);
+}
+
+#canvasOri {
+    background-image: url(Ori.jpg);
+}
+/*-------Съзвездия - canvas - /край/ -------------*/
+
+/*--- Бутон назад - съзвездия ---*/
+button.backButtonConstellations {
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    letter-spacing: 10px;
+    color: azure;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: indigo;
+    border-top: solid;
+    border-bottom: solid;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    height: 50px;
+    border-width: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-color: azure;
+}
+
+.backButtonConstellations:hover {
+    background-color: rebeccapurple;
+}
+
+/* Таблица на планетите - th, td*/
+.thPlanetInfo {
+    border-bottom: 1px solid #ddd;
+    width: 200px;
+    height: 20px;
+}
+/* td */
+.showSpeed, .showDiameter, .showGroup, .showMass, .showTemperature {
+    border-bottom: 1px solid #ddd;
+    width: 100px;
+    height: 20px;
+}
+
+/* Таблица на планетите - /край/ */
+
+/* Таблица на съзвездията - th, td */
+.thConstellations {
+    border-bottom: 1px solid #ddd;
+    margin: 5px;
+    padding: 5px;
+    width: 399px;
+    height: 25px;
+}
+
+/* td */
+.showLatinName, .showAbbreviation, .showSymbol, .showMonth, .showFamily, .showMainStars, .showBrightestStar {
+    border-bottom: 1px solid #ddd;
+    margin: 5px;
+    padding: 5px;
+    width: 199px;
+    height: 25px;
+}
+/* Таблица на съзвездията - /край/ */
+
+img.gameImages {
+    width: 650px;
+    height: 350px;
+    border: solid 5px azure;
+}
+
+.pFooter {
+    text-align: center;
+    font-family: Lucida Console, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 18px;
+    text-shadow: 2px 2px purple;
+    letter-spacing: 3px;
+}
+
+/*  Тест  */
+#quizArea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    height: auto;
+    min-height: 500px;
+    text-align: left;
+}
+
+#quiz {
+    padding: 10px 40px 40px 40px;
+    color: azure;
+    height: auto;
+    border-width: 2px;
+    border-radius: 4px;
+    border: solid;
+    border-left: none;
+    border-right: none;
+}
+
+#nextQuestion {
+    -o-transition: .5s;
+    /*   -ms-transition: .5s;*/
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    color: azure;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: indigo;
+    border-top: solid;
+    border-bottom: solid;
+    border-left: none;
+    border-right: none;
+    width: 100px;
+    height: 50px;
+    border-width: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-color: azure;
+}
+
+    #nextQuestion:hover {
+        background-color: rebeccapurple;
+    }
+
+#entertainmentSection {
+    background: linear-gradient(to bottom,indigo, #0d0d0d);
+}
+
+input.quizRadioButton {
+    height: 12px;
+    margin: 10px 0px 10px 0px;
+}
+
+#showAnswers {
+    -o-transition: .5s;
+    /*   -ms-transition: .5s;*/
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    color: azure;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: indigo;
+    border-top: solid;
+    border-bottom: solid;
+    border-left: none;
+    border-right: none;
+    width: 150px;
+    height: 50px;
+    border-width: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-color: azure;
+}
+
+    #showAnswers:hover {
+        background-color: rebeccapurple;
+    }
+
+hr.hrQuiz {
+    border: solid;
+    border-radius: 50%;
+    border-color: azure;
+    border-width: 2px;
+    width: 100%;
+    text-align: center;
+}
+
+/* resolution fast fix */
+
+div.mapOfPlanets {
+    border: ridge;
+    border-width: 5px;
+    border-color: azure;
+    border-radius: 25%;
+    box-shadow: 0 0px 1000px 0 indigo;
+    background: linear-gradient(to right,indigo, #0d0d0d);
+    float: left;
+    display: flex;
+    width: 99%;
+    height: 400px;
+    align-items: center;
+}
+
+img.planets {
+    margin-top: 30px;
+    margin-left: 5px;
+    transition: transform .5s;
+    cursor: pointer;
+}
+
+div.separatedPlanet {
+    width: auto;
+    padding-right: 5px;
+    margin-right: 5px;
+    overflow: visible;
+}
+
+div.planetTable {
+    color: azure;
+    float: right;
+    text-align: left;
+    width: 25%;
+}
+
+.canvasConstellations {
+    width: 500px;
+    height: 500px;
+    border-radius: 10%;
+    border-color: azure;
+    border-style: solid;
+    border-width: 5px;
+}
+
+div.constellationPresentation {
+    width: 100%;
+    height: 700px;
+    text-align: center;
+    align-content: center;
+}
+
+div.constellationTable {
+    width: 500px;
+    height: auto;
+    color: azure;
+    float: right;
+    text-align: left;
+    box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+img.constellationCardImage {
+    /*  width: 150px;
+    height: 150px; */
+    width: 78%;
+    height: 78%;
+    margin: 5px;
+    padding: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 1s;
+    cursor: pointer;
+}
+
+div.constellationCard {
+    width: 15%;
+    height: 200px;
+    text-align: center;
+    margin: 15px;
+    align-content: center;
+    display: inline-block;
+    box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.5);
+    border-width: 2px;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: azure;
+    display: inline-block;
+}
+/* resolution stars&galaxies */
+
+#galaxyFormationVideo {
+    min-height: 100%;
+    min-width: 100%;
+    border-radius: 5%;
+}
+
+img.galaxyTypeImage {
+    width: 75%; /*2x250*/
+    height: 60%;
+    margin: 30px;
+    padding: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+div.galaxyType {
+    width: 20%; /* 300, 380 px*/
+    height: 50%;
+    margin: 5px;
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+    box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.typeOneImage {
+    border-radius: 25%;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0px 0px 70px azure;
+}
+
+.typeOneImageArrow {
+    border-radius: 25%;
+    height: 100%;
+    width: 100%;
+}
+
+.divTypeOne {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-top: 11%;
+}
+
+.Paths {
+    width: 30%; /*300px&340px*/
+    height: 60%;
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+    box-shadow: 0 0px 20px 40px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    margin: 5%;
+    border-left: double;
+    border-right: double;
+    border-top: none;
+    border-bottom: none;
+    border-width: 6px;
+    border-radius: 10px;
+    border-color: azure;
+}
+
+.entertainmentMenuOptions {
+    background-color: azure;
+    float: none;
+    display: inline-block;
+    width: 28%;
+    border-radius: 30px;
+    height: 90%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 2%;
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .entertainmentMenuOptions:hover {
+        width: 26%;
+    }
+
+.imageAvatar {
+    margin-top: 33%;
+    width: 40%;
+    height: 50%;
+    position: relative;
+    display: inline-block;
+}
+
+.avatar {
+    padding: 2px 16px;
+    border-radius: 50%;
+    position: relative;
+}
+
+#entertainmentMenu {
+    height: 650px;
+    width: 100%;
+    display: flex;
+}
+
+.avatarDiv {
+    float: none;
+    display: block;
+    padding-top: 25%;
+    text-align: center;
+}
+
+.H1 {
+    letter-spacing: 10px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: indigo;
+    border-color: azure;
+    width: auto;
+    height: auto;
+    color: azure;
+    cursor: pointer;
+    border-radius: 20%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.searchBar {
+    width: 30%;
+    height: 270px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: inline;
+}
+
+#dropSearch {
+    float: left;
+    width: 10%;
+    height: 50px;
+    background-color: azure;
+    background-image: url(searchicon.png);
+    background-position: 50% 50%;
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    border-right: 1px solid dimgrey;
+    border-bottom: 1px solid dimgrey;
+    cursor: pointer;
+}
+
+#searchInput {
+    border: 1px solid azure;
+    width: 90%;
+    height: 50px;
+    background-color: azure;
+    border-bottom: 1px solid dimgrey;
+    visibility: hidden;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+}
+
+#searchSuggestions {
+    display: block;
+    visibility: hidden;
+    background-color: azure;
+    height: 200px;
+    overflow: scroll;
+}
+
+.suggestions {
+    display: block;
+    background-color: azure;
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: dimgrey;
+}
+
+    .suggestions:hover {
+        transition: 0.5s;
+        background-color: mediumpurple;
+        color: azure;
+    }
+
+@media only screen and (max-width: 1300px) {
+    div .separatedPlanet, #imgSun {
+        width: 100%;
+    }
+
+    img.planets {
+        margin-top: 30px;
+        margin-left: 1px;
+        transition: transform .5s;
+        cursor: pointer;
+        width: 80%;
+        height: 80%;
+    }
+
+    #imgSun {
+        width: 20%;
+        height: 40%;
+    }
+
+    img.mainSun {
+        width: 30%;
+        height: 30%;
+    }
+
+    img.planetImage {
+        width: 20%;
+        height: 20%;
+    }
+
+    img.moonImage {
+        width: 7%;
+        height: 7%;
+    }
+
+    h1.planetNameTitle {
+        font-size: 20px;
+    }
+
+    p.showSatellites {
+        font-size: 13px;
+    }
+
+    p.distanceLenght {
+        font-size: 13px;
+    }
+
+    div.constellationTable {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    div.constellationPresentation {
+        height: 900px;
+        display: block;
+    }
+    #galaxyFormationVideo {
+        height: 100%;
+        width: 100%;
+        border-radius: 5%;
+    }
+    #searchSuggestions {
+        height: 100px;
+    }
+    .searchBar {
+        height: 170px;
+    }
+}
+.symbolPopup {
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    .symbolPopup .popupImg {
+        visibility: hidden;
+        width: auto;
+        height: auto;
+        text-align: center;
+        border-radius: 6px;
+        padding: 8px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 50%;
+        left: 38%;
+        margin-left: -80px;
+    }
+
+    .symbolPopup .showImg {
+        visibility: visible;
+        width: auto;
+        height: auto;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn;
+    }
+
+.imgConstPopup {
+    border-radius: 8px;
+    border: 5px solid purple;
+    height: 300px;
+    width: 190px;
+}
+
+.showSymbol {
+    animation: shadow 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shadow {
+    0% {
+        text-shadow: 0 0 6px #DAA520;
+        text-decoration-color: #DAA520;
+    }
+
+    5% {
+        text-shadow: none;
+        text-decoration-color: azure;
+    }
+
+    10% {
+        text-shadow: 0 0 6px #DAA520;
+        text-decoration-color: #DAA520;
+    }
+
+    15% {
+        text-shadow: none;
+        text-decoration-color: azure;
+    }
+
+    20% {
+        text-shadow: 0 0 6px #DAA520;
+        text-decoration-color: #DAA520;
+    }
+
+    25% {
+        text-shadow: none;
+        text-decoration-color: azure;
+    }
+
+    30% {
+        text-shadow: 0 0 6px #DAA520;
+        text-decoration-color: #DAA520;
+    }
+
+    35% {
+        text-shadow: none;
+        text-decoration-color: azure;
+    }
+
+    40% {
+        text-shadow: 0 0 6px #DAA520;
+        text-decoration-color: #DAA520;
+    }
+
+    45% {
+        text-shadow: none;
+        text-decoration-color: azure;
+    }
+
+    50% {
+        text-shadow: 0 0 6px #DAA520;
+        text-decoration-color: #DAA520;
+    }
+
+    55% {
+        text-shadow: none;
+        text-decoration-color: azure;
+    }
+
+    60% {
+        text-shadow: 0 0 6px #DAA520;
+        text-decoration-color: #DAA520;
+    }
+
+    65% {
+        text-shadow: none;
+        text-decoration-color: azure;
+    }
+
+    70% {
+        text-shadow: 0 0 6px #DAA520;
+        text-decoration-color: #DAA520;
+    }
+
+    75% {
+        text-shadow: none;
+        text-decoration-color: azure;
+    }
+
+    80% {
+        text-shadow: 0 0 6px #DAA520;
+        text-decoration-color: #DAA520;
+    }
+
+    85% {
+        text-shadow: none;
+        text-decoration-color: azure;
+    }
+
+    90% {
+        text-shadow: 0 0 6px #DAA520;
+        text-decoration-color: #DAA520;
+    }
+
+    95% {
+        text-shadow: none;
+        text-decoration-color: azure;
+    }
+
+    100% {
+        text-shadow: 0 0 6px #DAA520;
+        text-decoration-color: #DAA520;
+    }
+}
+#muteButtonsArea {
+    width: 7%;
+    height: 50px;
+    border: 2px solid azure;
+    position: fixed;
+    left: 3%;
+    margin:-1px;
+    top: 0;
+}
+.muteBtn {
+    background-color: azure;
+    border-left: solid 1px dimgrey;
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+/*
+.typeOneImage {
+    border-radius: 25%;
+    height: 115px;
+    width: 145px;
+    box-shadow: 0px 0px 70px azure;
+}
+
+.typeOneImageArrow {
+    border-radius: 25%;
+    height: 115px;
+    width: 145px;
+}
+*/
+
+/*.distanceLine {
+    position:absolute;
+    top:???px;
+    left:???px;
+    height: 10px;
+    background-color: azure;
+    border-left: none;
+    border-top-right-radius: 95%;
+    border-bottom-right-radius: 95%;
+    border-width: 1px;
+}
+
+.distance {
+    position: relative;
+}
+
+p.distanceLenght {
+    position: absolute;
+    left: 390px;
+    top: 160px;
+    height: 10px;
+}
+
+
+*/
+
+/* Search Bar */

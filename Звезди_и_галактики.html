@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+
+<html lang="bg">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="style/style.css" />
+    <link rel="icon" href="style/icon.png" type="image/png" sizes="16x16">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="searchEngine.js"></script>
+    <script src="stars_&_galaxies.js"></script>
+    <title>Космос</title>
+</head>
+<body onload="playAudio()">
+    <header onclick="hideSearchBox()">
+        <h1 class="mainTittle" id="backToTop">Космос</h1>
+    </header>
+    <nav>
+        <div class="mainbar">
+            <ul id="menu" class="mainList">
+                <li class="firstLink"><a href="index.html" onclick="initialFindMe()">Начало</a></li>
+                <li class="middleLink"><a href="Слънчева_Система.html" onclick="initialFindMe()">Слънчева система</a></li>
+                <li class="middleLink"><a href="Съзвездия.html" onclick="initialFindMe()">Съзвездия</a></li>
+                <li class="middleLink" id="selected"><a href="Звезди_и_галактики.html" onclick="initialFindMe()">Звезди и галактики</a></li>
+                <li class="lastLink"><a href="Развлечения.html" onclick="initialFindMe()">Развлечения</a></li>
+            </ul>
+        </div>
+        <div class="searchBar">
+            <div id="dropSearch" onclick="showHideSearchBox()"></div>
+            <input type="text" id="searchInput" onkeydown="checkSuggestions()" placeholder="Търси">
+            <div id="searchSuggestions">
+                <div><a class="suggestions" href="index.html">Начало</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html">Слънчева система</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(1)">Меркурий</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(2)">Венера</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(3)">Земя</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(4)">Марс</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(5)">Юпитер</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(6)">Сатурн</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(7)">Уран</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(8)">Нептун</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="initialFindMe()">Съзвездия</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(1)">Рак</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(2)">Голямо куче</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(3)">Близнаци</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(4)">Колар</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(5)">Везни</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(6)">Орион</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(7)">Касиопеа</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(8)">Лъв</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(9)">Козирог</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(10)">Лебед</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(11)">Персей</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(12)">Скорпион</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html" onclick="initialFindMe()">Звезди</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html#welcomeToPathOne">Малка звезда</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html#welcomeToPathTwo">Голяма звезда</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html#galaxyTypesInfo" onclick="initialFindMe()">Галактики</a></div>
+                <div><a class="suggestions" href="Развлечения.html">Тест</a></div>
+                <div><a class="suggestions" href="Развлечения.html">Игра</a></div>
+                <div><a class="suggestions" href="Развлечения.html">Галерия</a></div>
+            </div>
+        </div>
+        <div id="muteButtonsArea">
+            <img id="mute" class="muteBtn" src="style/mute.png" onclick="mute()" />
+            <img id="unmute" class="muteBtn" src="style/unmute.png" onclick="unMute()" />
+        </div>
+    </nav>
+    <section id="galaxySection" onclick="hideSearchBox()">
+        <div class="parallaxOne">
+            <h1 id="galaxyTitle">Звезди и Галактики</h1>
+        </div>
+        <!--------Еволюция на звездите------->
+        <article id="starsFormation">
+            <div class="starsFormationInfo">
+                <h1>Звездите</h1>
+                <div id="divForPaths">
+                    <!-----Първи цикъл на образуване на звездите----->
+                    <div class="Paths" id="pathOne">
+                        <div id="welcomeToPathOne">
+                            <img id="imgPathOne" class="imagePaths" src="style/star1.png" />
+                            <p class="paraPath" id="paraPathOne">
+                                Малка звезда(под 1,4M<sub>c</sub>)
+                            </p>
+                            <button id="buttonEvolution" class="buttonForTheEvolution">Проследи еволюцията</button>
+                        </div>
+                        <!------Изображения--------->
+
+                        <div class="imagesStarLife" id="starLifeStepOne">
+                            <img id="imagesForStarLife" src="style/stellarNebula.gif" />
+                            <p>
+                                Облак протозвезди
+                            </p>
+                        </div>
+
+                        <div class="imagesStarLife" id="starLifeStepTwo">
+                            <img id="imagesForStarLife" src="style/averageStar.gif" />
+                            <p>
+                                Малка звезда
+                            </p>
+                        </div>
+
+                        <div class="imagesStarLife" id="starLifeStepThree">
+                            <img id="imagesForStarLife" src="style/redGiant.gif" />
+                            <p>
+                                Червен гигант
+                            </p>
+                        </div>
+
+                        <div class="imagesStarLife" id="starLifeStepFour">
+                            <img id="imagesForStarLife" src="style/planetaryNebula.gif" />
+                            <p>
+                                Планетарна мъглявина
+                            </p>
+                        </div>
+
+                        <div class="imagesStarLife" id="starLifeStepFive">
+                            <img id="imagesForStarLife" src="style/whiteDwarf.gif" />
+                            <p>
+                                Бяло джудже
+                            </p>
+                        </div>
+
+
+                        <!--------------------------------------------->
+                        <!------Първи цикъл на образуване на звездите/целия цикъл/--------->
+                        <div class="divTypeOne" id="stepOne">
+                            <img class="typeOneImage" onmouseover="showPopupOne()" src="style/stellarNebula.gif" />
+                            <span class="popupText" id="popupOne">Облак протозвезди</span>
+                        </div>
+
+                        <div class="divTypeOne" id="arrowOne">
+                            <img class="typeOneImageArrow" src="style/arrow.png" />
+                        </div>
+
+                        <div class="divTypeOne" id="stepTwo">
+                            <img class="typeOneImage" onmouseover="showPopupTwo()" src="style/averageStar.gif" />
+                            <span class="popupText" id="popupTwo">Малка звезда</span>
+                        </div>
+
+                        <div class="divTypeOne" id="arrowTwo">
+                            <img class="typeOneImageArrow" src="style/arrow.png" />
+                        </div>
+
+                        <div class="divTypeOne" id="stepThree">
+                            <img class="typeOneImage" onmouseover="showPopupThree()" src="style/redGiant.gif" />
+                            <span class="popupText" id="popupThree">Червен гигант</span>
+                        </div>
+
+                        <div class="divTypeOne" id="arrowThree">
+                            <img class="typeOneImageArrow" src="style/arrow.png" />
+                        </div>
+
+                        <div class="divTypeOne" id="stepFour">
+                            <img class="typeOneImage" onmouseover="showPopupFour()" src="style/planetaryNebula.gif" />
+                            <span class="popupText" id="popupFour">Планетарна мъглявина</span>
+                        </div>
+
+                        <div class="divTypeOne" id="arrowFour">
+                            <img class="typeOneImageArrow" src="style/arrow.png" />
+                        </div>
+
+                        <div class="divTypeOne" id="stepFive">
+                            <img class="typeOneImage" onmouseover="showPopupFive()" src="style/whiteDwarf.gif" />
+                            <span class="popupText" id="popupFive">Бяло джудже</span>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="backButtonDiv" id="backButton">
+                            <button id="backButtonGalaxies">Назад</button>
+
+                        </div>
+
+                        <!--------------------------------------------->
+                    </div>
+
+
+                    <!------------------Втори цикъл на образуване на звездите------------------>
+                    <div class="Paths" id="pathTwo">
+                        <div id="welcomeToPathTwo">
+                            <img id="imgPathTwo" class="imagePaths" src="style/star.png" />
+                            <p class="paraPath" id="paraPathTwo">
+                                Голяма звезда(над 1,4M<sub>c</sub>)
+                            </p>
+                            <button id="buttonEvolutionPathTwo" class="buttonForTheEvolution">Проследи еволюцията</button>
+                        </div>
+                        <!------Изображения--------->
+                        <div class="imagesStarLifePathTwo" id="starLifeStepOnePathTwo">
+                            <img id="imagesForStarLife" src="style/stellarNebula.gif" />
+                            <p>
+                                Облак протозвезди
+                            </p>
+                        </div>
+
+                        <div class="imagesStarLifePathTwo" id="starLifeStepTwoPathTwo">
+                            <img id="imagesForStarLife" src="style/massiveStar.gif" />
+                            <p>
+                                Голяма звезда
+                            </p>
+                        </div>
+
+                        <div class="imagesStarLifePathTwo" id="starLifeStepThreePathTwo">
+                            <img id="imagesForStarLife" src="style/redSupergiant.gif" />
+                            <p>
+                                Червен супергигант
+                            </p>
+                        </div>
+
+                        <div class="imagesStarLifePathTwo" id="starLifeStepFourPathTwo">
+                            <img id="imagesForStarLife" src="style/supernova.gif" />
+                            <p>
+                                Супернова
+                            </p>
+                        </div>
+
+                        <div class="imagesStarLifePathTwo" id="starLifeStepFivePathTwo">
+                            <img id="imagesForStarLife" src="style/neutronStar.gif" />
+                            <p>
+                                Неутронна звезда
+                            </p>
+                        </div>
+
+                        <!--------------------------------------------->
+                        <!------Втори цикъл на образуване на звездите/целия цикъл/--------->
+                        <div class="divTypeOne" id="stepOneTypeTwo">
+                            <img class="typeOneImage" onmouseover="showPopupOneTypeTwo()" src="style/stellarNebula.gif" />
+                            <span class="popupText" id="popupOneTypeTwo">Облак протозвезди</span>
+                        </div>
+
+                        <div class="divTypeOneArrow" id="arrowOneTypeTwo">
+                            <img class="typeOneImageArrow" src="style/arrow.png" />
+                        </div>
+
+                        <div class="divTypeOne" id="stepTwoTypeTwo">
+                            <img class="typeOneImage" onmouseover="showPopupTwoTypeTwo()" src="style/massiveStar.gif" />
+                            <span class="popupText" id="popupTwoTypeTwo">Голяма звезда</span>
+                        </div>
+
+                        <div class="divTypeOneArrow" id="arrowTwoTypeTwo">
+                            <img class="typeOneImageArrow" src="style/arrow.png" />
+                        </div>
+
+                        <div class="divTypeOne" id="stepThreeTypeTwo">
+                            <img class="typeOneImage" onmouseover="showPopupThreeTypeTwo()" src="style/redSupergiant.gif" />
+                            <span class="popupText" id="popupThreeTypeTwo">Червен супергигант</span>
+                        </div>
+
+                        <div class="divTypeOneArrow" id="arrowThreeTypeTwo">
+                            <img class="typeOneImageArrow" src="style/arrow.png" />
+                        </div>
+
+                        <div class="divTypeOne" id="stepFourTypeTwo">
+                            <img class="typeOneImage" onmouseover="showPopupFourTypeTwo()" src="style/supernova.gif" />
+                            <span class="popupText" id="popupFourTypeTwo">Супернова</span>
+                        </div>
+
+                        <div class="divTypeOneArrow" id="arrowFourTypeTwo">
+                            <img class="typeOneImageArrow" src="style/arrow.png" />
+                        </div>
+
+                        <div class="divTypeOne" id="stepFiveTypeTwo">
+                            <img class="typeOneImage" onmouseover="showPopupFiveTypeTwo()" src="style/neutronStar.gif" />
+                            <span class="popupText" id="popupFiveTypeTwo">Неутронна звезда</span>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="backButtonDiv" id="backButtonTwo">
+                            <button id="backButtonGalaxiesPathTwo">Назад</button>
+                        </div>
+
+                    </div>
+                    <!------------------------------------------------->
+                </div>
+                <!-------Еволюция на звездите-/край/------>
+
+            </div>
+        </article>
+
+        <div class="parallaxTwo"></div>
+
+        <article id="galaxyFormation">
+            <div id="galaxyFormationInfo">
+                <h2 id="videoTitle" class="articleTitle">Раждането на една галактика</h2>
+                <video id="galaxyFormationVideo" controls muted>
+                    <source src="style/galaxyFormation.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+        </article>
+
+        <div class="parallaxThree"></div>
+
+        <article id="typesOfGalaxies">
+            <audio id="clickOn">
+                <source src="style/clickOn.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="clickOff">
+                <source src="style/clickOff.mp3" type="audio/mpeg">
+            </audio>
+            <div id="galaxyTypesInfo">
+                <h2 class="articleTitle">Видове галактики</h2>
+                <div id="spiralGalaxy" class="galaxyType">
+                    <img class="galaxyTypeImage" src="style/spiralGalaxy.gif" />
+                    <p class="galaxyGroup">Спирална <br /> галактика</p>
+                    <p id="spiralInfo">
+                        Притежава светло централно ядро
+                        и два или повече извити звездни ръкава.
+                    </p>
+                </div>
+                <div id="doubleSpiralGalaxy" class="galaxyType">
+                    <img class="galaxyTypeImage" src="style/doubleSpiral.jpg" />
+                    <p class="galaxyGroup">Двойна <br /> спирална</p>
+                    <p id="doubleSpiralInfo">
+                        Има централно ядро и два ръкава.
+                    </p>
+                </div>
+                <div id="ellipticalGalaxy" class="galaxyType">
+                    <img class="galaxyTypeImage" src="style/elliptical.jpg" />
+                    <p class="galaxyGroup">Елиптична <br /> галактика</p>
+                    <p id="ellipticalInfo">
+                        Има кръгова или овална форма. Тя
+                        притежава струпвания от стари червени
+                        звезди, които съдържат малко газ или прах.
+                    </p>
+                </div>
+                <div id="irregularShapeGalaxy" class="galaxyType">
+                    <img class="galaxyTypeImage" src="style/irregularForm.jpg" />
+                    <p class="galaxyGroup">Неправилна <br /> форма</p>
+                    <p id="irregularShapeInfo">
+                        Няма определена форма и
+                        наподобява звезден облак.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <div class="parallaxFour"></div>
+
+        <article class="galaxyEnd">
+            <div class="galaxyEndInfo">
+                <br />
+                <br />
+                <a class="backToHomePage" href="#backToTop" onclick="playAudioOnClick()">Начало</a>
+            </div>
+        </article>
+    </section>
+    <footer>
+        <p class="pFooter">
+            Автори: Никола Георгиев, Даниел Стоянов
+        </p>
+    </footer>
+</body>
+</html>

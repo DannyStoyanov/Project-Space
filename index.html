@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+
+<html lang="bg">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="style/style.css" />
+    <link rel="icon" href="style/icon.png" type="image/png" sizes="16x16">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="searchEngine.js"></script>
+    <script src="index.js"></script>
+    <title>Космос</title>
+</head>
+<body onload="playAudio()">
+    <header onclick="hideSearchBox()">
+        <h1 class="mainTittle">Космос</h1>
+    </header>
+    <nav>
+        <div class="mainbar">
+            <ul id="menu" class="mainList">
+                <li class="firstLink" id="selected"><a href="index.html" onclick="initialFindMe()">Начало</a></li>
+                <li class="middleLink"><a href="Слънчева_Система.html" onclick="initialFindMe()">Слънчева система</a></li>
+                <li class="middleLink"><a href="Съзвездия.html" onclick="initialFindMe()">Съзвездия</a></li>
+                <li class="middleLink"><a href="Звезди_и_галактики.html" onclick="initialFindMe()">Звезди и галактики</a></li>
+                <li class="lastLink"><a href="Развлечения.html" onclick="initialFindMe()">Развлечения</a></li>
+            </ul>
+        </div>
+        <div class="searchBar">
+            <div id="dropSearch" onclick="showHideSearchBox()"></div>
+            <input type="text" id="searchInput" onkeydown="checkSuggestions()" placeholder="Търси">
+            <div id="searchSuggestions">
+                <div><a class="suggestions" href="index.html">Начало</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html">Слънчева система</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(1)">Меркурий</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(2)">Венера</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(3)">Земя</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(4)">Марс</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(5)">Юпитер</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(6)">Сатурн</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(7)">Уран</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(8)">Нептун</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="initialFindMe()">Съзвездия</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(1)">Рак</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(2)">Голямо куче</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(3)">Близнаци</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(4)">Колар</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(5)">Везни</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(6)">Орион</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(7)">Касиопеа</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(8)">Лъв</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(9)">Козирог</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(10)">Лебед</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(11)">Персей</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(12)">Скорпион</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html" onclick="initialFindMe()">Звезди</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html#welcomeToPathOne">Малка звезда</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html#welcomeToPathTwo">Голяма звезда</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html#galaxyTypesInfo" onclick="initialFindMe()">Галактики</a></div>
+                <div><a class="suggestions" href="Развлечения.html">Тест</a></div>
+                <div><a class="suggestions" href="Развлечения.html">Игра</a></div>
+                <div><a class="suggestions" href="Развлечения.html">Галерия</a></div>
+            </div>
+        </div>
+        <div id="muteButtonsArea">
+            <img id="mute" class="muteBtn" src="style/mute.png" onclick="mute()" />
+            <img id="unmute" class="muteBtn" src="style/unmute.png" onclick="unMute()" />
+        </div>
+    </nav>
+    <section onclick="hideSearchBox()">
+        <article class="info">
+            <div class="welcomeGallery" id="gallery">
+
+                <!--  Факти за Марс  -->
+                <div class="spaceGallery" id="space">
+                    <div class="elOne">
+                        <div class="block">
+                            <img src="style/mars.png" alt="mars" class="image">
+                            <p class="name">Марс</p>
+                            <div class="overlay">
+                                <div class="text">
+                                    <button id="learnForMars" class="popUpButton">Научи повече</button>
+                                </div>
+                                <div id="popUpInfoOne">
+                                    <br>
+                                    <br>
+                                    <p id="showFactOne"></p>
+                                    <button id="moreInfoOne" class="popUpButton">Още</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  Марс - край  -->
+                <!--  Факти за Юпитер  -->
+                <div class="spaceGallery" id="space">
+                    <div class="elTwo">
+                        <div class="block">
+                            <img src="style/jupiter.png" alt="jupiter" class="image">
+                            <p class="name">Юпитер</p>
+                            <div class="overlay">
+                                <div class="text">
+                                    <button id="learnForJupiter" class="popUpButton">Научи повече</button>
+                                </div>
+                                <br>
+                                <div id="popUpInfoTwo">
+                                    <p id="showFactTwo"></p>
+                                    <button id="moreInfoTwo" class="popUpButton">Още</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  Юпитер - край  -->
+                <!--  Факти за Земя  -->
+                <div class="spaceGallery" id="space">
+                    <div class="elThree">
+                        <div class="block">
+                            <img src="style/earth.png" alt="earth" class="image">
+                            <p class="name">Земя</p>
+                            <div class="overlay">
+                                <div class="text">
+                                    <button id="learnForEarth" class="popUpButton">Научи повече</button>
+                                </div>
+                                <div id="popUpInfoThree">
+                                    <br>
+                                    <p id="showFactThree"></p>
+                                    <button id="moreInfoThree" class="popUpButton">Още</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  Земя - край -->
+                <!--  Факти за съзвездието Дракон  -->
+                <div class="spaceGallery" id="space">
+                    <div class="elFour">
+                        <div class="block">
+                            <img src="style/draco2.jpg" alt="dracoConstellation" class="image">
+                            <p class="name">Съзвездието Дракон</p>
+                            <div class="overlay">
+                                <div class="text">
+                                    <button id="learnForDraco" class="popUpButton">Научи повече</button>
+                                </div>
+                                <div id="popUpInfoFour">
+                                    <p id="showFactFour"></p>
+                                    <button id="moreInfoFour" class="popUpButton">Още</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  Дракон - край  -->
+                <!--  Факти за Орион  -->
+                <div class="spaceGallery" id="space">
+                    <div class="elFive">
+                        <div class="block">
+                            <img src="style/orion.gif" alt="orionConstellation" class="image">
+                            <p class="name">Съзвездието Орион</p>
+                            <div class="overlay">
+                                <div class="text">
+                                    <button id="learnForOrion" class="popUpButton">Научи повече</button>
+                                </div>
+                                <div id="popUpInfoFive">
+                                    <p id="showFactFive"></p>
+                                    <button id="moreInfoFive" class="popUpButton">Още</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  Орион - край  -->
+                <!-- Факти за Млечен път   -->
+                <div class="spaceGallery" id="space">
+                    <div class="elSix">
+                        <div class="block">
+                            <img src="style/milkyWay.gif" alt="MilkyWayGalaxy" class="image">
+                            <p> </p><br />
+                            <p class="name">Млечен път</p>
+                            <div class="overlay">
+                                <div class="text">
+                                    <button id="learnForMilkyWay" class="popUpButton">Научи повече</button>
+                                </div>
+                                <div id="popUpInfoSix">
+                                    <p id="showFactSix"></p>
+                                    <button id="moreInfoSix" class="popUpButton">Още</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  Млечен път - край  -->
+
+            </div>
+        </article>
+    </section>
+    <footer>
+        <p class="pFooter">
+            Автори: Никола Георгиев, Даниел Стоянов
+        </p>
+    </footer>
+</body>
+</html>

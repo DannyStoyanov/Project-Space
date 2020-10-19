@@ -1,0 +1,623 @@
+﻿<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="style/style.css" />
+    <link rel="icon" href="style/icon.png" type="image/png" sizes="16x16">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="searchEngine.js"></script>
+    <script src="constellations.js"></script>
+    <title>Космос</title>
+</head>
+<body onload="playAudio()">
+    <header onclick="hideSearchBox()">
+        <h1 class="mainTittle">Космос</h1>
+    </header>
+    <nav>
+        <div class="mainbar">
+            <ul id="menu" class="mainList">
+                <li class="firstLink"><a href="index.html" onclick="initialFindMe()">Начало</a></li>
+                <li class="middleLink"><a href="Слънчева_Система.html" onclick="initialFindMe()">Слънчева система</a></li>
+                <li class="middleLink" id="selected"><a href="Съзвездия.html" onclick="initialFindMe()">Съзвездия</a></li>
+                <li class="middleLink"><a href="Звезди_и_галактики.html" onclick="initialFindMe()">Звезди и галактики</a></li>
+                <li class="lastLink"><a href="Развлечения.html" onclick="initialFindMe()">Развлечения</a></li>
+            </ul>
+        </div>
+        <div class="searchBar">
+            <div id="dropSearch" onclick="showHideSearchBox()"></div>
+            <input type="text" id="searchInput" onkeydown="checkSuggestions()" placeholder="Търси">
+            <div id="searchSuggestions">
+                <div><a class="suggestions" href="index.html">Начало</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html">Слънчева система</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(1)">Меркурий</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(2)">Венера</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(3)">Земя</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(4)">Марс</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(5)">Юпитер</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(6)">Сатурн</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(7)">Уран</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(8)">Нептун</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="initialFindMe()">Съзвездия</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(1)">Рак</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(2)">Голямо куче</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(3)">Близнаци</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(4)">Колар</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(5)">Везни</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(6)">Орион</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(7)">Касиопеа</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(8)">Лъв</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(9)">Козирог</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(10)">Лебед</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(11)">Персей</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(12)">Скорпион</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html" onclick="initialFindMe()">Звезди</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html#welcomeToPathOne">Малка звезда</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html#welcomeToPathTwo">Голяма звезда</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html#galaxyTypesInfo" onclick="initialFindMe()">Галактики</a></div>
+                <div><a class="suggestions" href="Развлечения.html">Тест</a></div>
+                <div><a class="suggestions" href="Развлечения.html">Игра</a></div>
+                <div><a class="suggestions" href="Развлечения.html">Галерия</a></div>
+            </div>
+        </div>
+        <div id="muteButtonsArea">
+            <img id="mute" class="muteBtn" src="style/mute.png" onclick="mute()" />
+            <img id="unmute" class="muteBtn" src="style/unmute.png" onclick="unMute()" />
+        </div>
+    </nav>
+    <section id="constSection" onclick="hideSearchBox()">
+        <article id="constellationArticle">
+            <h1 id="mainConstellationTitle">Съзвездия</h1>
+            <hr />
+            <!--лист със съзвездия-->
+            <div id="constellationList">
+                <div class="constellationCard">
+                    <img class="constellationCardImage" src="style/cancer.jpg" id="openCnc" onclick="CncPage()" />
+                    <p class="constellationCardName">Неправилна форма</p>
+                </div>
+                <div class="constellationCard">
+                    <img class="constellationCardImage" src="style/canis_major.jpg" id="openCMa" onclick="CMaPage()" />
+                    <p class="constellationCardName">Неправилна форма</p>
+                </div>
+                <div class="constellationCard">
+                    <img class="constellationCardImage" src="style/gemini.jpg" id="openGem" onclick="GemPage()" />
+                    <p class="constellationCardName">Неправилна форма</p>
+                </div>
+                <div class="constellationCard">
+                    <img class="constellationCardImage" src="style/auriga.jpg" id="openAur" onclick="AurPage()" />
+                    <p class="constellationCardName">Неправилна форма</p>
+                </div>
+                <br />
+                <div class="constellationCard">
+                    <img class="constellationCardImage" src="style/libra.jpg" id="openLib" onclick="LibPage()" />
+                    <p class="constellationCardName">Неправилна форма</p>
+                </div>
+                <div class="constellationCard">
+                    <img class="constellationCardImage" src="style/orion.gif" id="openOri" onclick="OriPage()" />
+                    <p class="constellationCardName">Неправилна форма</p>
+                </div>
+                <div class="constellationCard">
+                    <img class="constellationCardImage" src="style/cassiopeia.jpg" id="openCas" onclick="CasPage()" />
+                    <p class="constellationCardName">Неправилна форма</p>
+                </div>
+                <div class="constellationCard">
+                    <img class="constellationCardImage" src="style/leo.jpg" id="openLeo" onclick="LeoPage()" />
+                    <p class="constellationCardName">Неправилна форма</p>
+                </div>
+                <br />
+                <div class="constellationCard">
+                    <img class="constellationCardImage" src="style/capricornus.jpg" id="openCap" onclick="CapPage()" />
+                    <p class="constellationCardName">Неправилна форма</p>
+                </div>
+                <div class="constellationCard">
+                    <img class="constellationCardImage" src="style/cygnus.jpg" id="openCyg" onclick="CygPage()" />
+                    <p class="constellationCardName">Неправилна форма</p>
+                </div>
+                <div class="constellationCard">
+                    <img class="constellationCardImage" src="style/perseus.jpg" id="openPer" onclick="PerPage()" />
+                    <p class="constellationCardName">Неправилна форма</p>
+                </div>
+                <div class="constellationCard">
+                    <img class="constellationCardImage" src="style/scorpius.jpg" id="openSco" onclick="ScoPage()" />
+                    <p class="constellationCardName">Неправилна форма</p>
+                </div>
+            </div>
+            <!--край на лист със съзвездия-->
+            <!--Презентиране на съзвездията-->
+            <div class="constellationPresentation" id="Cnc">
+                <h1 class="showName"></h1>
+                <canvas class="canvasConstellations" id="canvasCnc" onmouseover="showCnc()" onmouseout="hideCnc()"></canvas>
+                <div class="constellationTable">
+                    <table>
+                        <tr>
+                            <th class="thConstellations">Латинско име:</th>
+                            <td class="showLatinName"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Съкращение:</th>
+                            <td class="showAbbreviation"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Символизира:</th>
+
+                            <td class="symbolPopup" onmouseover="showPopupImgCnc()" onmouseout="hidePopupImgCnc()">
+                                <div class="showSymbol"></div>
+                                <span class="popupImg" id="myPopupImgCnc"><img src="style/constCrabSimb.jpg" class="imgConstPopup" /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-добър месец за гледане:</th>
+                            <td class="showMonth"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Семейство:</th>
+                            <td class="showFamily"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Главни звезди:</th>
+                            <td class="showMainStars"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-ярка звезда:</th>
+                            <td class="showBrightestStar"></td>
+                        </tr>
+                    </table>
+                    <button class="backButtonConstellations" onclick="backToConstellations()">Назад</button>
+                </div>
+            </div>
+            <div class="constellationPresentation" id="CMa">
+                <h1 class="showName"></h1>
+                <canvas class="canvasConstellations" id="canvasCMa" onmouseover="showCMa()" onmouseout="hideCMa()"></canvas>
+                <div class="constellationTable">
+                    <table>
+                        <tr>
+                            <th class="thConstellations">Латинско име:</th>
+                            <td class="showLatinName"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Съкращение:</th>
+                            <td class="showAbbreviation"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Символизира:</th>
+
+                            <td class="symbolPopup" onmouseover="showPopupImgCma()" onmouseout="hidePopupImgCma()">
+                                <div class="showSymbol"></div>
+                                <span class="popupImg" id="myPopupImgCma"><img src="style/canismajor.jpg" class="imgConstPopup" /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-добър месец за гледане:</th>
+                            <td class="showMonth"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Семейство:</th>
+                            <td class="showFamily"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Главни звезди:</th>
+                            <td class="showMainStars"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-ярка звезда:</th>
+                            <td class="showBrightestStar"></td>
+                        </tr>
+                    </table>
+                    <button class="backButtonConstellations" onclick="backToConstellations()">Назад</button>
+                </div>
+            </div>
+            <div class="constellationPresentation" id="Gem">
+                <h1 class="showName"></h1>
+                <canvas class="canvasConstellations" id="canvasGem" onmouseover="showGem()" onmouseout="hideGem()"></canvas>
+                <div class="constellationTable">
+                    <table id="constellationInfoTable">
+                        <tr>
+                            <th class="thConstellations">Латинско име:</th>
+                            <td class="showLatinName"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Съкращение:</th>
+                            <td class="showAbbreviation"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Символизира:</th>
+                            <td class="symbolPopup" onmouseover="showPopupImgGem()" onmouseout="hidePopupImgGem()">
+                                <div class="showSymbol"></div>
+                                <span class="popupImg" id="myPopupImgGem"><img src="style/geminiPopup.jpg" class="imgConstPopup" /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-добър месец за гледане:</th>
+                            <td class="showMonth"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Семейство:</th>
+                            <td class="showFamily"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Главни звезди:</th>
+                            <td class="showMainStars"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-ярка звезда:</th>
+                            <td class="showBrightestStar"></td>
+                        </tr>
+                    </table>
+                    <button class="backButtonConstellations" onclick="backToConstellations()">Назад</button>
+                </div>
+            </div>
+            <div class="constellationPresentation" id="Aur">
+                <h1 class="showName"></h1>
+                <canvas class="canvasConstellations" id="canvasAur" onmouseover="showAur()" onmouseout="hideAur()"></canvas>
+                <div class="constellationTable">
+                    <table>
+                        <tr>
+                            <th class="thConstellations">Латинско име:</th>
+                            <td class="showLatinName"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Съкращение:</th>
+                            <td class="showAbbreviation"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Символизира:</th>
+                            <td class="symbolPopup" onmouseover="showPopupImgAur()" onmouseout="hidePopupImgAur()">
+                                <div class="showSymbol"></div>
+                                <span class="popupImg" id="myPopupImgAur"><img src="style/aurigaPopup.jpg" class="imgConstPopup" /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-добър месец за гледане:</th>
+                            <td class="showMonth"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Семейство:</th>
+                            <td class="showFamily"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Главни звезди:</th>
+                            <td class="showMainStars"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-ярка звезда:</th>
+                            <td class="showBrightestStar"></td>
+                        </tr>
+                    </table>
+                    <button class="backButtonConstellations" onclick="backToConstellations()">Назад</button>
+                </div>
+            </div>
+            <div class="constellationPresentation" id="Lib">
+                <h1 class="showName"></h1>
+                <canvas class="canvasConstellations" id="canvasLib" onmouseover="showLib()" onmouseout="hideLib()"></canvas>
+                <div class="constellationTable">
+                    <table>
+                        <tr>
+                            <th class="thConstellations">Латинско име:</th>
+                            <td class="showLatinName"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Съкращение:</th>
+                            <td class="showAbbreviation"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Символизира:</th>
+                            <td class="symbolPopup" onmouseover="showPopupImgLib()" onmouseout="hidePopupImgLib()">
+                                <div class="showSymbol"></div>
+                                <span class="popupImg" id="myPopupImgLib"><img src="style/libraPopup.jpg" class="imgConstPopup" /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-добър месец за гледане:</th>
+                            <td class="showMonth"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Семейство:</th>
+                            <td class="showFamily"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Главни звезди:</th>
+                            <td class="showMainStars"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-ярка звезда:</th>
+                            <td class="showBrightestStar"></td>
+                        </tr>
+                    </table>
+                    <button class="backButtonConstellations" onclick="backToConstellations()">Назад</button>
+                </div>
+            </div>
+            <div class="constellationPresentation" id="Ori">
+                <h1 class="showName"></h1>
+                <canvas class="canvasConstellations" id="canvasOri" onmouseover="showOri()" onmouseout="hideOri()"></canvas>
+                <div class="constellationTable">
+                    <table>
+                        <tr>
+                            <th class="thConstellations">Латинско име:</th>
+                            <td class="showLatinName"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Съкращение:</th>
+                            <td class="showAbbreviation"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Символизира:</th>
+                            <td class="symbolPopup" onmouseover="showPopupImgOri()" onmouseout="hidePopupImgOri()">
+                                <div class="showSymbol"></div>
+                                <span class="popupImg" id="myPopupImgOri"><img src="style/orionPopup.jpg" class="imgConstPopup" /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-добър месец за гледане:</th>
+                            <td class="showMonth"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Семейство:</th>
+                            <td class="showFamily"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Главни звезди:</th>
+                            <td class="showMainStars"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-ярка звезда:</th>
+                            <td class="showBrightestStar"></td>
+                        </tr>
+                    </table>
+                    <button class="backButtonConstellations" onclick="backToConstellations()">Назад</button>
+                </div>
+            </div>
+            <div class="constellationPresentation" id="Cas">
+                <h1 class="showName"></h1>
+                <canvas class="canvasConstellations" id="canvasCas" onmouseover="showCas()" onmouseout="hideCas()"></canvas>
+                <div class="constellationTable">
+                    <table>
+                        <tr>
+                            <th class="thConstellations">Латинско име:</th>
+                            <td class="showLatinName"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Съкращение:</th>
+                            <td class="showAbbreviation"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Символизира:</th>
+                            <td class="symbolPopup" onmouseover="showPopupImgCas()" onmouseout="hidePopupImgCas()">
+                                <div class="showSymbol"></div>
+                                <span class="popupImg" id="myPopupImgCas"><img src="style/cassiopeiaPopup.jpg" class="imgConstPopup" /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-добър месец за гледане:</th>
+                            <td class="showMonth"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Семейство:</th>
+                            <td class="showFamily"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Главни звезди:</th>
+                            <td class="showMainStars"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-ярка звезда:</th>
+                            <td class="showBrightestStar"></td>
+                        </tr>
+                    </table>
+                    <button class="backButtonConstellations" onclick="backToConstellations()">Назад</button>
+                </div>
+            </div>
+
+            <div class="constellationPresentation" id="Leo">
+                <h1 class="showName"></h1>
+                <canvas class="canvasConstellations" id="canvasLeo" onmouseover="showLeo()" onmouseout="hideLeo()"></canvas>
+                <div class="constellationTable">
+                    <table>
+                        <tr>
+                            <th class="thConstellations">Латинско име:</th>
+                            <td class="showLatinName"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Съкращение:</th>
+                            <td class="showAbbreviation"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Символизира:</th>
+                            <td class="symbolPopup" onmouseover="showPopupImgLeo()" onmouseout="hidePopupImgLeo()">
+                                <div class="showSymbol"></div>
+                                <span class="popupImg" id="myPopupImgLeo"><img src="style/leoPopup.jpg" class="imgConstPopup" /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-добър месец за гледане:</th>
+                            <td class="showMonth"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Семейство:</th>
+                            <td class="showFamily"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Главни звезди:</th>
+                            <td class="showMainStars"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-ярка звезда:</th>
+                            <td class="showBrightestStar"></td>
+                        </tr>
+                    </table>
+                    <button class="backButtonConstellations" onclick="backToConstellations()">Назад</button>
+                </div>
+            </div>
+
+            <div class="constellationPresentation" id="Cap">
+                <h1 class="showName"></h1>
+                <canvas class="canvasConstellations" id="canvasCap" onmouseover="showCap()" onmouseout="hideCap()"></canvas>
+                <div class="constellationTable">
+                    <table>
+                        <tr>
+                            <th class="thConstellations">Латинско име:</th>
+                            <td class="showLatinName"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Съкращение:</th>
+                            <td class="showAbbreviation"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Символизира:</th>
+                            <td class="symbolPopup" onmouseover="showPopupImgCap()" onmouseout="hidePopupImgCap()">
+                                <div class="showSymbol"></div>
+                                <span class="popupImg" id="myPopupImgCap"><img src="style/capricornusPopup.jpg" class="imgConstPopup" /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-добър месец за гледане:</th>
+                            <td class="showMonth"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Семейство:</th>
+                            <td class="showFamily"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Главни звезди:</th>
+                            <td class="showMainStars"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-ярка звезда:</th>
+                            <td class="showBrightestStar"></td>
+                        </tr>
+                    </table>
+                    <button class="backButtonConstellations" onclick="backToConstellations()">Назад</button>
+                </div>
+            </div>
+
+            <div class="constellationPresentation" id="Cyg">
+                <h1 class="showName"></h1>
+                <canvas class="canvasConstellations" id="canvasCyg" onmouseover="showCyg()" onmouseout="hideCyg()"></canvas>
+                <div class="constellationTable">
+                    <table>
+                        <tr>
+                            <th class="thConstellations">Латинско име:</th>
+                            <td class="showLatinName"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Съкращение:</th>
+                            <td class="showAbbreviation"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Символизира:</th>
+                            <td class="symbolPopup" onmouseover="showPopupImgCyg()" onmouseout="hidePopupImgCyg()">
+                                <div class="showSymbol"></div>
+                                <span class="popupImg" id="myPopupImgCyg"><img src="style/cygnusPopup.jpg" class="imgConstPopup" /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-добър месец за гледане:</th>
+                            <td class="showMonth"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Семейство:</th>
+                            <td class="showFamily"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Главни звезди:</th>
+                            <td class="showMainStars"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-ярка звезда:</th>
+                            <td class="showBrightestStar"></td>
+                        </tr>
+                    </table>
+                    <button class="backButtonConstellations" onclick="backToConstellations()">Назад</button>
+                </div>
+            </div>
+
+            <div class="constellationPresentation" id="Per">
+                <h1 class="showName"></h1>
+                <canvas class="canvasConstellations" id="canvasPer" onmouseover="showPer()" onmouseout="hidePer()"></canvas>
+                <div class="constellationTable">
+                    <table>
+                        <tr>
+                            <th class="thConstellations">Латинско име:</th>
+                            <td class="showLatinName"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Съкращение:</th>
+                            <td class="showAbbreviation"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Символизира:</th>
+                            <td class="symbolPopup" onmouseover="showPopupImgPer()" onmouseout="hidePopupImgPer()">
+                                <div class="showSymbol"></div>
+                                <span class="popupImg" id="myPopupImgPer"><img src="style/perseusPopup.jpg" class="imgConstPopup" /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-добър месец за гледане:</th>
+                            <td class="showMonth"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Семейство:</th>
+                            <td class="showFamily"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Главни звезди:</th>
+                            <td class="showMainStars"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-ярка звезда:</th>
+                            <td class="showBrightestStar"></td>
+                        </tr>
+                    </table>
+                    <button class="backButtonConstellations" onclick="backToConstellations()">Назад</button>
+                </div>
+            </div>
+
+            <div class="constellationPresentation" id="Sco">
+                <h1 class="showName"></h1>
+                <canvas class="canvasConstellations" id="canvasSco" onmouseover="showSco()" onmouseout="hideSco()"></canvas>
+                <div class="constellationTable">
+                    <table>
+                        <tr>
+                            <th class="thConstellations">Латинско име:</th>
+                            <td class="showLatinName"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Съкращение:</th>
+                            <td class="showAbbreviation"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Символизира:</th>
+                            <td class="symbolPopup" onmouseover="showPopupImgSco()" onmouseout="hidePopupImgSco()">
+                                <div class="showSymbol"></div>
+                                <span class="popupImg" id="myPopupImgSco"><img src="style/scorpiusPopup.jpg" class="imgConstPopup" /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-добър месец за гледане:</th>
+                            <td class="showMonth"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Семейство:</th>
+                            <td class="showFamily"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Главни звезди:</th>
+                            <td class="showMainStars"></td>
+                        </tr>
+                        <tr>
+                            <th class="thConstellations">Най-ярка звезда:</th>
+                            <td class="showBrightestStar"></td>
+                        </tr>
+                    </table>
+                    <button class="backButtonConstellations" onclick="backToConstellations()">Назад</button>
+                </div>
+            </div>
+
+        </article>
+    </section>
+    <footer>
+        <p class="pFooter">
+            Автори: Никола Георгиев, Даниел Стоянов
+        </p>
+    </footer>
+</body>
+</html>

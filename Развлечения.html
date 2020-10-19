@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+
+<html lang="bg">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="style/style.css" />
+    <link rel="icon" href="style/icon.png" type="image/png" sizes="16x16">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="searchEngine.js"></script>
+    <script src="entertainment.js" charset="utf-8"></script>
+    <title>Космос</title>
+</head>
+<body onload="playAudio()">
+    <header onclick="hideSearchBox()">
+        <h1 class="mainTittle">Космос</h1>
+    </header>
+    <nav>
+        <div class="mainbar">
+            <ul id="menu" class="mainList">
+                <li class="firstLink"><a href="index.html" onclick="initialFindMe()">Начало</a></li>
+                <li class="middleLink"><a href="Слънчева_Система.html" onclick="initialFindMe()">Слънчева система</a></li>
+                <li class="middleLink"><a href="Съзвездия.html" onclick="initialFindMe()">Съзвездия</a></li>
+                <li class="middleLink"><a href="Звезди_и_галактики.html" onclick="initialFindMe()">Звезди и галактики</a></li>
+                <li class="lastLink" id="selected"><a href="Развлечения.html" onclick="initialFindMe()">Развлечения</a></li>
+            </ul>
+        </div>
+        <div class="searchBar">
+            <div id="dropSearch" onclick="showHideSearchBox()"></div>
+            <input type="text" id="searchInput" onkeydown="checkSuggestions()" placeholder="Търси">
+            <div id="searchSuggestions">
+                <div><a class="suggestions" href="index.html">Начало</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html">Слънчева система</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(1)">Меркурий</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(2)">Венера</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(3)">Земя</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(4)">Марс</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(5)">Юпитер</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(6)">Сатурн</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(7)">Уран</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(8)">Нептун</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="initialFindMe()">Съзвездия</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(1)">Рак</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(2)">Голямо куче</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(3)">Близнаци</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(4)">Колар</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(5)">Везни</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(6)">Орион</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(7)">Касиопеа</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(8)">Лъв</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(9)">Козирог</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(10)">Лебед</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(11)">Персей</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(12)">Скорпион</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html" onclick="initialFindMe()">Звезди</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html#welcomeToPathOne">Малка звезда</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html#welcomeToPathTwo">Голяма звезда</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html#galaxyTypesInfo" onclick="initialFindMe()">Галактики</a></div>
+                <div><a class="suggestions" href="Развлечения.html">Тест</a></div>
+                <div><a class="suggestions" href="Развлечения.html">Игра</a></div>
+                <div><a class="suggestions" href="Развлечения.html">Галерия</a></div>
+            </div>
+        </div>
+        <div id="muteButtonsArea">
+            <img id="mute" class="muteBtn" src="style/mute.png" onclick="mute()" />
+            <img id="unmute" class="muteBtn" src="style/unmute.png" onclick="unMute()" />
+        </div>
+    </nav>
+    <section id="sectionEntertainment" onclick="hideSearchBox()">
+        <article class="info">
+            <!-------------------------НАВИГАЦИЯ------------------------------------>
+            <div id="entertainmentMenu">
+
+                <div class="entertainmentMenuOptions" id="test">
+                    <div class="avatarDiv">
+                        <img src="style/test.png" alt="test" class="imageAvatar" />
+                        <div class="avatar">
+                            <button class="H1" id="buttonTest"><b>ТЕСТ</b></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="entertainmentMenuOptions" id="game">
+                    <div class="avatarDiv">
+                        <img src="style/game.png" alt="game" class="imageAvatar" />
+                        <div class="avatar">
+                            <button class="H1" id="buttonGame" onclick="pauseAudio()"><b>ИГРА</b></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="entertainmentMenuOptions" id="gallery">
+                    <div class="avatarDiv">
+                        <img src="style/gallery.png" alt="gallery" class="imageAvatar" />
+                        <div class="avatar">
+                            <button class="H1" id="buttonGallery"><b>ГАЛЕРИЯ</b></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-------------------------НАВИГАЦИЯ-/КРАЙ/----------------------------------->
+            <!----------------------ГАЛЕРИЯ-------------------------->
+            <div>
+
+
+                <div class="container" id="imageGalleryEntertainment">
+                    <img class="imagesForGalleryClass" id="imagesForGallery1" src="style/imageGallery0.jpg" style="width:100%">
+
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 12</div>
+                        <img class="imagesForGalleryClass" id="imagesForGallery" src="style/imageGallery1.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 12</div>
+                        <img class="imagesForGalleryClass" id="imagesForGallery" src="style/imageGallery2.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 12</div>
+                        <img class="imagesForGalleryClass" id="imagesForGallery" src="style/imageGallery3.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">4 / 12</div>
+                        <img class="imagesForGalleryClass" id="imagesForGallery" src="style/imageGallery4.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">5 / 12</div>
+                        <img class="imagesForGalleryClass" id="imagesForGallery" src="style/imageGallery5.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">6 / 12</div>
+                        <img class="imagesForGalleryClass" id="imagesForGallery" src="style/imageGallery6.png" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">7 / 12</div>
+                        <img class="imagesForGalleryClass" id="imagesForGallery" src="style/imageGallery7.png" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">8 / 12</div>
+                        <img class="imagesForGalleryClass" id="imagesForGallery" src="style/imageGallery8.png" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">9 / 12</div>
+                        <img class="imagesForGalleryClass" id="imagesForGallery" src="style/imageGallery9.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">10 / 12</div>
+                        <img class="imagesForGalleryClass" id="imagesForGallery" src="style/imageGallery10.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">11 / 12</div>
+                        <img class="imagesForGalleryClass" id="imagesForGallery" src="style/imageGallery11.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">12 / 12</div>
+                        <img class="imagesForGalleryClass" id="imagesForGallery" src="style/imageGallery12.jpg" style="width:100%">
+                    </div>
+
+
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+
+                    <div class="caption-container">
+                        <p id="caption"></p>
+                    </div>
+
+                    <div class="row">
+                        <div class="column">
+                            <img id="imagesForGallery1" class="demo cursor" src="style/imageGallery1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Супернова">
+                        </div>
+                        <div class="column">
+                            <img id="imagesForGallery" class="demo cursor" src="style/imageGallery2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Млечният път">
+                        </div>
+                        <div class="column">
+                            <img id="imagesForGallery" class="demo cursor" src="style/imageGallery3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Земята">
+                        </div>
+                        <div class="column">
+                            <img id="imagesForGallery" class="demo cursor" src="style/imageGallery4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Слънцето">
+                        </div>
+                        <div class="column">
+                            <img id="imagesForGallery" class="demo cursor" src="style/imageGallery5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Сатурн">
+                        </div>
+                        <div class="column">
+                            <img id="imagesForGallery" class="demo cursor" src="style/imageGallery6.png" style="width:100%" onclick="currentSlide(6)" alt="Взаимдодействащи си галактики, заснети от космическият телескоп Хъбъл">
+                        </div>
+                        <div class="column">
+                            <img id="imagesForGallery" class="demo cursor" src="style/imageGallery7.png" style="width:100%" onclick="currentSlide(7)" alt="Венера">
+                        </div>
+                        <div class="column">
+                            <img id="imagesForGallery" class="demo cursor" src="style/imageGallery8.png" style="width:100%" onclick="currentSlide(8)" alt="Меркурий">
+                        </div>
+                        <div class="column">
+                            <img id="imagesForGallery" class="demo cursor" src="style/imageGallery9.jpg" style="width:100%" onclick="currentSlide(9)" alt="Халеева комета">
+                        </div>
+                        <div class="column">
+                            <img id="imagesForGallery" class="demo cursor" src="style/imageGallery10.jpg" style="width:100%" onclick="currentSlide(10)" alt="Луната">
+                        </div>
+                        <div class="column">
+                            <img id="imagesForGallery" class="demo cursor" src="style/imageGallery11.jpg" style="width:100%" onclick="currentSlide(11)" alt="Нептун">
+                        </div>
+                        <div class="column">
+                            <img id="imagesForGallery" class="demo cursor" src="style/imageGallery12.jpg" style="width:100%" onclick="currentSlide(12)" alt="Марс">
+                        </div>
+                    </div>
+
+                    <br />
+                </div>
+                <button class="backButtonEntertainment" id="backButtonGallery"><b>НАЗАД</b></button>
+            </div>
+            <!----------------------ГАЛЕРИЯ-/КРАЙ/------------------------->
+            <!----------------------------ИГРА----------------------------->
+            <div>
+                <div id="gameLevels">
+                    <button class="buttonLevels" id="buttonGameLevelOne" onclick="letsPlay()"><b>НИВО 1</b></button>
+                    <button class="buttonLevels" id="buttonGameLevelTwo" onclick="letsPlayLevelTwo()"><b>НИВО 2</b></button>
+                    <button class="buttonLevels" id="buttonGameLevelThree" onclick="letsPlayLevelThree()"><b>НИВО 3</b></button>
+                    <button class="buttonLevels" id="buttonGameLevelFour" onclick="letsPlayLevelFour()"><b>НИВО 4</b></button>
+                    <br />
+                    <img src="style/firstGameImage.jpg" id="imageGame" class="gameImages" />
+                    <img src="style/gameOver.png" id="imageGameOver" class="gameImages" />
+                    <img src="style/YouWin.png" id="imageYouWin" class="gameImages" />
+                    <br />
+                    <br />
+                </div>
+                <br />
+                <button class="backButtonEntertainment" id="backButtonGame" onclick="playAudio()"><b>НАЗАД</b></button>
+            </div>
+            <!----------------------------ИГРА-/КРАЙ/---------------------------->
+            <!-------------------------ТЕСТ------------------>
+            <div id="quizArea">
+                <h2 id="status"></h2>
+                <div id="quiz"></div>
+                <br />
+                <button class="backButtonEntertainment" id="backButtonTest"><b>НАЗАД</b></button>
+            </div>
+            <!-------------------------ТЕСТ-/край/----------------->
+        </article>
+    </section>
+    <footer>
+        <p class="pFooter">
+            Автори: Никола Георгиев, Даниел Стоянов
+        </p>
+    </footer>
+</body>
+</html>

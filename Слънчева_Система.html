@@ -1,0 +1,423 @@
+﻿<!DOCTYPE html>
+
+<html lang="bg">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="style/style.css" />
+    <link rel="icon" href="style/icon.png" type="image/png" sizes="16x16">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="searchEngine.js"></script>
+    <script src="planets.js"></script>
+    <title>Космос</title>
+</head>
+<body onload="playAudio()">
+    <header onclick="hideSearchBox()">
+        <h1 class="mainTittle">Космос</h1>
+    </header>
+    <nav>
+        <div class="mainbar">
+            <ul id="menu" class="mainList">
+                <li class="firstLink"><a href="index.html" onclick="initialFindMe()">Начало</a></li>
+                <li class="middleLink" id="selected"><a href="Слънчева_Система.html" onclick="initialFindMe()">Слънчева система</a></li>
+                <li class="middleLink"><a href="Съзвездия.html" onclick="initialFindMe()">Съзвездия</a></li>
+                <li class="middleLink"><a href="Звезди_и_галактики.html" onclick="initialFindMe()">Звезди и галактики</a></li>
+                <li class="lastLink"><a href="Развлечения.html" onclick="initialFindMe()">Развлечения</a></li>
+            </ul>
+        </div>
+        <div class="searchBar">
+            <div id="dropSearch" onclick="showHideSearchBox()"></div>
+            <input type="text" id="searchInput" onkeydown="checkSuggestions()" placeholder="Търси">
+            <div id="searchSuggestions">
+                <div><a class="suggestions" href="index.html">Начало</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html">Слънчева система</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(1)">Меркурий</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(2)">Венера</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(3)">Земя</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(4)">Марс</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(5)">Юпитер</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(6)">Сатурн</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(7)">Уран</a></div>
+                <div><a class="suggestions" href="Слънчева_Система.html" onclick="setFindMe(8)">Нептун</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="initialFindMe()">Съзвездия</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(1)">Рак</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(2)">Голямо куче</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(3)">Близнаци</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(4)">Колар</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(5)">Везни</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(6)">Орион</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(7)">Касиопеа</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(8)">Лъв</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(9)">Козирог</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(10)">Лебед</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(11)">Персей</a></div>
+                <div><a class="suggestions" href="Съзвездия.html" onclick="setFindMe(12)">Скорпион</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html" onclick="initialFindMe()">Звезди</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html#welcomeToPathOne">Малка звезда</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html#welcomeToPathTwo">Голяма звезда</a></div>
+                <div><a class="suggestions" href="Звезди_и_галактики.html#galaxyTypesInfo" onclick="initialFindMe()">Галактики</a></div>
+                <div><a class="suggestions" href="Развлечения.html">Тест</a></div>
+                <div><a class="suggestions" href="Развлечения.html">Игра</a></div>
+                <div><a class="suggestions" href="Развлечения.html">Галерия</a></div>
+            </div>
+        </div>
+        <div id="muteButtonsArea">
+            <img id="mute" class="muteBtn" src="style/mute.png" onclick="mute()" />
+            <img id="unmute" class="muteBtn" src="style/unmute.png" onclick="unMute()" />
+        </div>
+    </nav>
+    <section id="solarSystemSection" onclick="hideSearchBox()">
+        <article class="info">
+            <div class="planetShow">
+                <div class="solarSystem" id="divSolarSystem">
+                    <h1>Слънчева система</h1>
+                    <div class="mapOfPlanets">
+                        <img class="separatedPlanet" src="style/mainSun.png" id="imgSun" alt="Sun" height="200" width="200">
+                        <div class="separatedPlanet">
+                            <img class="planets" src="style/mercury.png" alt="Mercury" height="50" width="50" onclick="showMercury()">
+                            <p class="planetName"></p>
+                        </div>
+                        <div class="separatedPlanet">
+                            <img class="planets" src="style/venus.png" alt="Venus" height="100" width="100" onclick="showVenus()">
+                            <p class="planetName"></p>
+                        </div>
+                        <div class="separatedPlanet">
+                            <img class="planets" src="style/earth.png" alt="Earth" height="85" width="85" onclick="showEarth()">
+                            <p class="planetName"></p>
+                        </div>
+                        <div class="separatedPlanet">
+                            <img class="planets" src="style/mars.png" alt="Mars" height="70" width="70" onclick="showMars()">
+                            <p class="planetName"></p>
+                        </div>
+                        <div class="separatedPlanet">
+                            <img class="planets" src="style/jupiter.png" alt="Venus" height="125" width="125" onclick="showJupiter()">
+                            <p class="planetName"></p>
+                        </div>
+                        <div class="separatedPlanet">
+                            <img class="planets" src="style/saturn.png" alt="Saturn" height="110" width="220" onclick="showSaturn()">
+                            <p class="planetName"></p>
+                        </div>
+                        <div class="separatedPlanet">
+                            <img class="planets" src="style/uran.png" alt="Uranus" height="110" width="110" onclick="showUranus()">
+                            <p class="planetName"></p>
+                        </div>
+                        <div class="separatedPlanet">
+                            <img class="planets" src="style/neptune.png" alt="Neptune" height="110" width="110" onclick="showNeptune()">
+                            <p class="planetName"></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Меркурий -->
+                <div class="planetInfo" id="divMerc">
+                    <div class="distance">
+                        <img class="mainSun" src="style/mainSun.png" alt="Sun" height="400" width="400">
+                    </div>
+                    <h1 class="planetNameTitle"></h1>
+                    <div class="planetTable">
+                        <table>
+                            <tr>
+                                <th class="thPlanetInfo">Скорост на въртене:</th>
+                                <td class="showSpeed"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Екваториален диаметър:</th>
+                                <td class="showDiameter"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Група:</th>
+                                <td class="showGroup"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Маса:</th>
+                                <td class="showMass"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Средна температура:</th>
+                                <td class="showTemperature"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <img class="planetImage" src="style/mercury.png" alt="Mercury" height="250" width="250">
+                    <img class="moonImage" src="style/moon.png" alt="moon" height="100" width="120">
+                    <p class="showSatellites"></p>
+                    <p class="distanceLenght"></p>
+                    <br />
+                    <button class="backButton" onclick="backToSolarSystem()">Назад</button>
+                </div>
+                <!-- Меркурий - /край/ -->
+                <!-- Венера -->
+                <div class="planetInfo" id="divVen">
+                    <div class="distance">
+                        <img class="mainSun" src="style/mainSun.png" alt="Sun" height="400" width="400">
+                    </div>
+                    <h1 class="planetNameTitle"></h1>
+                    <div class="planetTable">
+                        <table>
+                            <tr>
+                                <th class="thPlanetInfo">Скорост на въртене:</th>
+                                <td class="showSpeed"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Екваториален диаметър:</th>
+                                <td class="showDiameter"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Група:</th>
+                                <td class="showGroup"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Маса:</th>
+                                <td class="showMass"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Средна температура:</th>
+                                <td class="showTemperature"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <img class="planetImage" src="style/venus.png" alt="venus" height="250" width="250">
+                    <img class="moonImage" src="style/moon.png" alt="moon" height="100" width="120">
+                    <p class="showSatellites"></p>
+                    <p class="distanceLenght"></p>
+                    <br />
+                    <button class="backButton" onclick="backToSolarSystem()">Назад</button>
+                </div>
+                <!-- Венера- /край/ -->
+                <!-- Земя -->
+                <div class="planetInfo" id="divEarth">
+                    <div class="distance">
+                        <img class="mainSun" src="style/mainSun.png" alt="Sun" height="400" width="400">
+                    </div>
+                    <h1 class="planetNameTitle"></h1>
+                    <div class="planetTable">
+                        <table>
+                            <tr>
+                                <th class="thPlanetInfo">Скорост на въртене:</th>
+                                <td class="showSpeed"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Екваториален диаметър:</th>
+                                <td class="showDiameter"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Група:</th>
+                                <td class="showGroup"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Маса:</th>
+                                <td class="showMass"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Средна температура:</th>
+                                <td class="showTemperature"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <img class="planetImage" src="style/earth.png" alt="earth" height="250" width="250">
+                    <img class="moonImage" src="style/moon.png" alt="moon" height="100" width="120">
+                    <p class="showSatellites"></p>
+                    <p class="distanceLenght"></p>
+                    <br />
+                    <button class="backButton" onclick="backToSolarSystem()">Назад</button>
+                </div>
+                <!-- Земя - /край/ -->
+                <!-- Марс -->
+                <div class="planetInfo" id="divMars">
+                    <div class="distance">
+                        <img class="mainSun" src="style/mainSun.png" alt="Sun" height="400" width="400">
+                    </div>
+                    <h1 class="planetNameTitle"></h1>
+                    <div class="planetTable">
+                        <table>
+                            <tr>
+                                <th class="thPlanetInfo">Скорост на въртене:</th>
+                                <td class="showSpeed"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Екваториален диаметър:</th>
+                                <td class="showDiameter"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Група:</th>
+                                <td class="showGroup"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Маса:</th>
+                                <td class="showMass"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Средна температура:</th>
+                                <td class="showTemperature"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <img class="planetImage" src="style/mars.png" alt="mars" height="250" width="250">
+                    <img class="moonImage" src="style/moon.png" alt="moon" height="100" width="120">
+                    <p class="showSatellites"></p>
+                    <p class="distanceLenght"></p>
+                    <br />
+                    <button class="backButton" onclick="backToSolarSystem()">Назад</button>
+                </div>
+                <!-- Марс - /край/ -->
+                <!-- Юпитер -->
+                <div class="planetInfo" id="divJup">
+                    <div class="distance">
+                        <img class="mainSun" src="style/mainSun.png" alt="Sun" height="400" width="400">
+                    </div>
+                    <h1 class="planetNameTitle"></h1>
+                    <div class="planetTable">
+                        <table>
+                            <tr>
+                                <th class="thPlanetInfo">Скорост на въртене:</th>
+                                <td class="showSpeed"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Екваториален диаметър:</th>
+                                <td class="showDiameter"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Група:</th>
+                                <td class="showGroup"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Маса:</th>
+                                <td class="showMass"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Средна температура:</th>
+                                <td class="showTemperature"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <img class="planetImage" src="style/jupiter.png" alt="jupiter" height="250" width="250">
+                    <img class="moonImage" src="style/moon.png" alt="moon" height="100" width="120">
+                    <p class="showSatellites"></p>
+                    <p class="distanceLenght"></p>
+                    <br />
+                    <button class="backButton" onclick="backToSolarSystem()">Назад</button>
+                </div>
+                <!-- Юпитер - /край/ -->
+                <!-- Сатурн -->
+                <div class="planetInfo" id="divSat">
+                    <div class="distance">
+                        <img class="mainSun" src="style/mainSun.png" alt="Sun" height="400" width="400">
+                    </div>
+                    <h1 class="planetNameTitle"></h1>
+                    <div class="planetTable">
+                        <table>
+                            <tr>
+                                <th class="thPlanetInfo">Скорост на въртене:</th>
+                                <td class="showSpeed"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Екваториален диаметър:</th>
+                                <td class="showDiameter"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Група:</th>
+                                <td class="showGroup"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Маса:</th>
+                                <td class="showMass"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Средна температура:</th>
+                                <td class="showTemperature"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <img class="planetImage" src="style/saturn.png" alt="saturn" height="200" width="400">
+                    <img class="moonImage" src="style/moon.png" alt="moon" height="100" width="120">
+                    <p class="showSatellites"></p>
+                    <p class="distanceLenght"></p>
+                    <br />
+                    <button class="backButton" onclick="backToSolarSystem()">Назад</button>
+                </div>
+                <!-- Сатурн - /край/ -->
+                <!-- Уран -->
+                <div class="planetInfo" id="divUran">
+                    <div class="distance">
+                        <img class="mainSun" src="style/mainSun.png" alt="Sun" height="400" width="400">
+                    </div>
+                    <h1 class="planetNameTitle"></h1>
+                    <div class="planetTable">
+                        <table>
+                            <tr>
+                                <th class="thPlanetInfo">Скорост на въртене:</th>
+                                <td class="showSpeed"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Екваториален диаметър:</th>
+                                <td class="showDiameter"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Група:</th>
+                                <td class="showGroup"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Маса:</th>
+                                <td class="showMass"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Средна температура:</th>
+                                <td class="showTemperature"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <img class="planetImage" src="style/uran.png" alt="uranus" height="250" width="250">
+                    <img class="moonImage" src="style/moon.png" alt="moon" height="100" width="120">
+                    <p class="showSatellites"></p>
+                    <p class="distanceLenght"></p>
+                    <br />
+                    <button class="backButton" onclick="backToSolarSystem()">Назад</button>
+                </div>
+                <!-- Уран - /край/ -->
+                <!-- Нептун -->
+                <div class="planetInfo" id="divNept">
+                    <div class="distance">
+                        <img class="mainSun" src="style/mainSun.png" alt="Sun" height="400" width="400">
+                    </div>
+                    <h1 class="planetNameTitle"></h1>
+                    <div class="planetTable">
+                        <table>
+                            <tr>
+                                <th class="thPlanetInfo">Скорост на въртене:</th>
+                                <td class="showSpeed"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Екваториален диаметър:</th>
+                                <td class="showDiameter"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Група:</th>
+                                <td class="showGroup"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Маса:</th>
+                                <td class="showMass"></td>
+                            </tr>
+                            <tr>
+                                <th class="thPlanetInfo">Средна температура:</th>
+                                <td class="showTemperature"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <img class="planetImage" src="style/neptune.png" alt="neptune" height="250" width="250">
+                    <img class="moonImage" src="style/moon.png" alt="moon" height="100" width="120">
+                    <p class="showSatellites"></p>
+                    <p class="distanceLenght"></p>
+                    <br />
+                    <button class="backButton" onclick="backToSolarSystem()">Назад</button>
+                </div>
+                <!-- Нептун - /край/ -->
+            </div>
+        </article>
+    </section>
+    <footer>
+        <p class="pFooter">
+            Автори: Никола Георгиев, Даниел Стоянов
+        </p>
+    </footer>
+</body>
+</html>
